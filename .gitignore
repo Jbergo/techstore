@@ -8,3 +8,6 @@
 # Logs y temporales
 *.log
 *.tmp
+
+# Pruebas locales
+prueba.php
