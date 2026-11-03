@@ -1,5 +1,34 @@
 <?php
-$hora = date("H:i:s");
+
+declare(strict_types=1);
+
+$titulo = $titulo ?? "Catálogo";
+
+require_once "datos.php";
+require_once "funciones.php";
+require __DIR__ . "/inc/cabecera.php";
+
+
 ?>
-<h1>TechStore funciona</h1>
-<p>Hora del servidor: <?= $hora ?></p>
+<section class="catalogo">
+    <?php foreach ($productos as $producto) : ?>
+        <article class="producto">
+            <h2><?= escapar($producto["nombre"]) ?></h2>
+
+            <p>Categoría: <?= escapar($producto["categoria"]) ?></p>
+
+            <p><?= escapar($producto["descripcion"]) ?></p>
+
+            <p><?= formatearPrecio($producto["precio_centimos"]) ?></p>
+
+            <p>
+                <?= $producto["stock"] ?> en stock - 
+                <span class="estado <?= obtenerClaseEstado($producto["stock"]) ?>"><?= obtenerEstadoStock($producto["stock"]) ?></span>
+            </p>
+
+            <a href="producto.php?id=<?= (int)$producto["id"] ?>">Ver producto</a>
+
+        </article>
+    <?php endforeach; ?>
+</section>
+<?php require "inc/pie.php" ?>
