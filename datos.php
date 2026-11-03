@@ -7,6 +7,7 @@ const IVA_GENERAL = 0.21;
 const UNIDADES_MIN_DESCUENTO = 5;
 const DESCUENTO_CANTIDAD = 0.10;
 const MAX_UNIDADES_LINEA = 10;
+const STOCK_BAJO = 5;
 
 $productos = [
     1 => [

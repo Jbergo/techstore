@@ -15,11 +15,11 @@ require __DIR__ . "/inc/cabecera.php";
         <article class="producto">
             <h2><?= escapar($producto["nombre"]) ?></h2>
 
-            <p>Categoría: <?= escapar($producto["categoria"]) ?></p>
+            <p class="categoria">Categoría: <?= escapar($producto["categoria"]) ?></p>
 
             <p><?= escapar($producto["descripcion"]) ?></p>
 
-            <p><?= formatearPrecio($producto["precio_centimos"]) ?></p>
+            <p class="precio"><?= formatearPrecio($producto["precio_centimos"]) ?></p>
 
             <p>
                 <?= $producto["stock"] ?> en stock - 
