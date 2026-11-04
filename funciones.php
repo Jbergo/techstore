@@ -35,3 +35,14 @@ function obtenerEstadoStock(int $stock): string
         default      => "Stock no válido",
     };
 }
+
+function leerCadena(array $origen, string $clave): string
+{
+    $cadena = $origen[$clave] ?? "";
+
+    if (!is_string($cadena)) {
+        return "";
+    }
+
+    return trim($cadena);
+}
