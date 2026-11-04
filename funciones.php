@@ -60,3 +60,12 @@ function ordenarProductos(array $productos, string $orden): array
 
     return $productos;
 }
+
+function buscarProductoPorId(array $productos, int $id): ?array
+{
+    if (array_key_exists($id, $productos)) {
+        return $productos[$id];
+    }
+
+    return null;
+}
