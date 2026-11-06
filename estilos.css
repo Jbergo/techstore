@@ -148,6 +148,19 @@ h1 {
   display: inline-block;
 }
 
+.enlace-accion {
+  color: var(--color-primario);
+  font-weight: 500;
+}
+
+.enlace-accion:hover {
+  text-decoration: underline;
+}
+
+.enlace-accion:focus-visible {
+  outline: var(--color-primario);
+}
+
 .agotado {
   color: var(--color-agotado);
   background-color: var(--color-agotado-fondo);
@@ -168,4 +181,25 @@ footer {
   font-size: small;
   padding: 15px;
   color: var(--color-texto-suave);
+}
+
+.detalle {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 8px var(--sombra);
+  text-align: center;
+}
+
+.mensaje-error {
+  background-color: var(--color-agotado-fondo);
+  color: var(--color-agotado);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 10px;
 }

@@ -29,3 +29,32 @@ if ($idProducto === false || $idProducto < 1) {
 
 require __DIR__ . "/inc/cabecera.php";
 ?>
+<?php if ($error !== ""): ?>
+    <p class="mensaje-error">
+        <?= escapar($error) ?>
+    </p>
+    <a href="index.php" class="enlace-accion">Volver al catálogo</a>
+<?php else: ?>
+    <article class="detalle">
+        <p class="categoria">
+            Categoría:
+            <?= escapar($producto["categoria"]) ?>
+        </p>
+
+        <p>
+            <?= escapar($producto["descripcion"]) ?>
+        </p>
+
+        <p class="precio">
+            <?= formatearPrecio($producto["precio_centimos"]) ?>
+        </p>
+
+        <p>
+            <?= $producto["stock"] ?> en stock -
+            <span class="estado <?= obtenerClaseEstado($producto["stock"]) ?>"><?= obtenerEstadoStock($producto["stock"]) ?></span>
+        </p>
+
+        <a href="index.php" class="enlace-accion">Volver al catálogo</a>
+    </article>
+<?php endif; ?>
+<?php require __DIR__ . "/inc/pie.php"; ?>

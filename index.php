@@ -55,7 +55,7 @@ require __DIR__ . "/inc/cabecera.php";
                 <span class="estado <?= obtenerClaseEstado($producto["stock"]) ?>"><?= obtenerEstadoStock($producto["stock"]) ?></span>
             </p>
 
-            <a href="producto.php?id=<?= (int)$producto["id"] ?>">Ver producto</a>
+            <a href="producto.php?id=<?= (int)$producto["id"] ?>" class="enlace-accion">Ver producto</a>
 
         </article>
     <?php endforeach; ?>
